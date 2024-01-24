@@ -1,0 +1,192 @@
+IngredientId,IngredientName,IngredientTypeEN,Calories,Energy,Fat,SaturatedFat,Carbohydrate,Sugars,Fibre,Protein,Salt,Liquid,Mass
+127,Anchovy,5,0,0,0,0,0,0,0,0,0,False,0
+6,Apple,3,51,215,0.5,0,11.6,0.5,0,0.6,0,False,0
+7,Apricot,3,0,0,0,0,0,0,0,0,0,False,0
+57,Artichoke,3,0,0,0,0,0,0,0,0,0,False,0
+40,Asian Pear,3,0,0,0,0,0,0,0,0,0,False,0
+63,Asparagus,3,0,0,0,0,0,0,0,0,0,False,0
+128,Atlantic Bluefin Tuna,5,0,0,0,0,0,0,0,0,0,False,0
+8,Avocado,3,189,780,19.3,0,1.9,0.5,0,2.1,0,False,0
+129,Ballan Wrasse,5,0,0,0,0,0,0,0,0,0,False,0
+68,Bamboo Shoots,3,0,0,0,0,0,0,0,0,0,False,0
+9,Banana,3,0,0,0,0,0,0,0,0,0,False,0
+101,Barbel,5,0,0,0,0,0,0,0,0,0,False,0
+130,"Bass, Seabass",5,0,0,0,0,0,0,0,0,0,False,0
+69,Bean Sprouts,3,0,0,0,0,0,0,0,0,0,False,0
+76,Beans,3,0,0,0,0,0,0,0,0,0,False,0
+3,Beef,7,0,0,0,0,0,0,0,0,0,False,0
+77,Beetroot,3,0,0,0,0,0,0,0,0,0,False,0
+83,Bell Pepper,3,0,0,0,0,0,0,0,0,0,False,0
+131,"Bib, or Pouting",5,0,0,0,0,0,0,0,0,0,False,0
+132,Black Seabream,5,0,0,0,0,0,0,0,0,0,False,0
+102,Bleak,5,0,0,0,0,0,0,0,0,0,False,0
+133,Blonde Ray,5,0,0,0,0,0,0,0,0,0,False,0
+134,Blue Shark,5,0,0,0,0,0,0,0,0,0,False,0
+10,Blueberry,3,0,0,0,0,0,0,0,0,0,False,0
+181,Bouquet Garni,5,0,0,0,0,0,0,0,0,0,False,0
+190,Bread Flour,3,0,0,0,0,0,0,0,0,0,False,61.66
+50,Breadfruit,3,0,0,0,0,0,0,0,0,0,False,0
+103,Bream,5,0,0,0,0,0,0,0,0,0,False,0
+135,Brill,5,0,0,0,0,0,0,0,0,0,False,0
+84,Broccoli,3,0,0,0,0,0,0,0,0,0,False,0
+185,Brown Sugar,3,11,0,0,0,0,0,0,0,0,False,0
+104,Brown Trout,5,0,0,0,0,0,0,0,0,0,False,0
+85,Brussels Sprouts,3,0,0,0,0,0,0,0,0,0,False,0
+136,"Bull Huss, Nursehound",5,0,0,0,0,0,0,0,0,0,False,0
+178,Butter,4,0,0,0,0,0,0,0,0,0,False,0
+86,Cabbage,3,0,0,0,0,0,0,0,0,0,False,0
+87,Cactus Pear,3,0,0,0,0,0,0,0,0,0,False,0
+105,Carp,5,0,0,0,0,0,0,0,0,0,False,0
+64,Carrot,3,0,0,0,0,0,0,0,0,0,False,0
+65,Cauliflower,3,0,0,0,0,0,0,0,0,0,False,0
+66,Celery,3,0,0,0,0,0,0,0,0,0,False,0
+67,Chayote,3,0,0,0,0,0,0,0,0,0,False,0
+11,Cherry,3,0,0,0,0,0,0,0,0,0,False,0
+173,Chicken,6,0,0,0,0,0,0,0,0,0,False,0
+175,Chicken Stock,6,0,0,0,0,0,0,0,0,0,False,0
+46,Chinese Bayberry,3,0,0,0,0,0,0,0,0,0,False,0
+106,Chub,5,0,0,0,0,0,0,0,0,0,False,0
+12,Coconut,3,0,0,0,0,0,0,0,0,0,False,0
+137,Cod,5,0,0,0,0,0,0,0,0,0,False,0
+88,Collard Greens,3,0,0,0,0,0,0,0,0,0,False,0
+138,Conger Eel,5,0,0,0,0,0,0,0,0,0,False,0
+89,Corn,3,0,0,0,0,0,0,0,0,0,False,0
+139,Cornish King Crab,5,0,0,0,0,0,0,0,0,0,False,0
+140,Cornish Sardine,5,0,0,0,0,0,0,0,0,0,False,0
+141,"Cornish Sole, Megrim",5,0,0,0,0,0,0,0,0,0,False,0
+142,"Crab, Brown, Edible",5,0,0,0,0,0,0,0,0,0,False,0
+143,"Crawfish, Spiny Lobster",5,0,0,0,0,0,0,0,0,0,False,0
+144,Cuckoo Ray,5,0,0,0,0,0,0,0,0,0,False,0
+90,Cucumber,3,0,0,0,0,0,0,0,0,0,False,0
+145,Cuttlefish,5,0,0,0,0,0,0,0,0,0,False,0
+146,Dab,5,0,0,0,0,0,0,0,0,0,False,0
+107,Dace,5,0,0,0,0,0,0,0,0,0,False,0
+186,Demerara Sugar,3,15,0,0,0,0,0,0,0,0,False,0
+51,Dragon Fruit,3,0,0,0,0,0,0,0,0,0,False,0
+174,Duck,6,0,0,0,0,0,0,0,0,0,False,0
+39,Durian,3,0,0,0,0,0,0,0,0,0,False,0
+147,"Eel, European",5,0,0,0,0,0,0,0,0,0,False,0
+91,Eggplant,3,0,0,0,0,0,0,0,0,0,False,0
+92,Endive,3,0,0,0,0,0,0,0,0,0,False,0
+93,Escarole,3,0,0,0,0,0,0,0,0,0,False,0
+15,Fig,3,0,0,0,0,0,0,0,0,0,False,0
+108,Flounder,5,0,0,0,0,0,0,0,0,0,False,0
+94,Garlic,3,0,0,0,0,0,0,0,0,0,False,0
+148,Gilthead Bream,5,0,0,0,0,0,0,0,0,0,False,0
+191,Gluten-Free Flour,3,0,0,0,0,0,0,0,0,0,False,61.66
+5,Goat,7,0,0,0,0,0,0,0,0,0,False,0
+109,Golden Orfe,5,0,0,0,0,0,0,0,0,0,False,0
+182,Granulated Sugar,3,16,0,0,0,0,0,0,0,0,False,0
+13,Grape,3,0,0,0,0,0,0,0,0,0,False,0
+14,Grapefruit,3,0,0,0,0,0,0,0,0,0,False,0
+110,Grayling,5,0,0,0,0,0,0,0,0,0,False,0
+95,Green Beans,3,0,0,0,0,0,0,0,0,0,False,0
+70,Green Onion,3,0,0,0,0,0,0,0,0,0,False,0
+149,Grey Mullet,5,0,0,0,0,0,0,0,0,0,False,0
+43,Guava,3,0,0,0,0,0,0,0,0,0,False,0
+111,Gudgeon,5,0,0,0,0,0,0,0,0,0,False,0
+150,Haddock,5,0,0,0,0,0,0,0,0,0,False,0
+151,Hake,5,0,0,0,0,0,0,0,0,0,False,0
+152,Halibut,5,0,0,0,0,0,0,0,0,0,False,0
+153,Herring,5,0,0,0,0,0,0,0,0,0,False,0
+36,Jackfruit,3,0,0,0,0,0,0,0,0,0,False,0
+55,Japanese Persimmon,3,0,0,0,0,0,0,0,0,0,False,0
+154,John Dory,5,0,0,0,0,0,0,0,0,0,False,0
+16,Kiwi,3,0,0,0,0,0,0,0,0,0,False,0
+49,Kumquat,3,0,0,0,0,0,0,0,0,0,False,0
+1,Lamb,7,0,0,0,0,0,0,0,0,0,False,0
+53,Langsat,3,0,0,0,0,0,0,0,0,0,False,0
+71,Leek,3,0,0,0,0,0,0,0,0,0,False,0
+17,Lemon,3,0,0,0,0,0,0,0,0,0,False,0
+155,Lemon Sole,5,0,0,0,0,0,0,0,0,0,False,0
+156,Lesser Spotted Dogfish,5,0,0,0,0,0,0,0,0,0,False,0
+72,Lettuce,3,0,0,0,0,0,0,0,0,0,False,0
+189,Liduid Sugar,3,12,0,0,0,0,0,0,0,0,False,0
+18,Lime,3,0,0,0,0,0,0,0,0,0,False,0
+157,Ling,5,0,0,0,0,0,0,0,0,0,False,0
+158,Lobster,5,0,0,0,0,0,0,0,0,0,False,0
+42,Longan,3,0,0,0,0,0,0,0,0,0,False,0
+44,Lotus Fruit,3,0,0,0,0,0,0,0,0,0,False,0
+34,Lychee,3,0,0,0,0,0,0,0,0,0,False,0
+159,Mackerel,5,0,0,0,0,0,0,0,0,0,False,0
+19,Mandarin,3,0,0,0,0,0,0,0,0,0,False,0
+20,Mango,3,0,0,0,0,0,0,0,0,0,False,0
+41,Mangosteen,3,0,0,0,0,0,0,0,0,0,False,0
+21,Melon,3,0,0,0,0,0,0,0,0,0,False,0
+171,Milk (Cows),4,0,0,0,0,0,0,0,0,0,True,0
+172,Milk (Goats),4,0,0,0,0,0,0,0,0,0,True,0
+113,Minnow,5,0,0,0,0,0,0,0,0,0,False,0
+160,"Monkfish, Black Bellied",5,0,0,0,0,0,0,0,0,0,False,0
+161,"Monkfish, White",5,0,0,0,0,0,0,0,0,0,False,0
+188,Muscovado Sugar,3,51,0,0,0,0,0,0,0,0,False,0
+73,Mushroom,3,0,0,0,0,0,0,0,0,0,False,0
+162,Mussels,5,0,0,0,0,0,0,0,0,0,False,0
+163,Native Oyster,5,0,0,0,0,0,0,0,0,0,False,0
+22,Nectarine,3,0,0,0,0,0,0,0,0,0,False,0
+177,Nutmeg,3,0,0,0,0,0,0,0,0,0,False,0
+164,Octopus,5,0,0,0,0,0,0,0,0,0,False,0
+74,Onion,3,0,0,0,0,0,0,0,0,0,False,0
+23,Orange,3,0,0,0,0,0,0,0,0,0,False,0
+165,Pacific Oyster,5,0,0,0,0,0,0,0,0,0,False,0
+24,Papaya,3,0,0,0,0,0,0,0,0,0,False,0
+75,Parsnip,3,0,0,0,0,0,0,0,0,0,False,0
+56,Passion Fruit,3,0,0,0,0,0,0,0,0,0,False,0
+96,Pea,3,0,0,0,0,0,0,0,0,0,False,0
+26,Peach,3,0,0,0,0,0,0,0,0,0,False,0
+27,Pear,3,0,0,0,0,0,0,0,0,0,False,0
+78,Pepper,3,0,0,0,0,0,0,0,0,0,False,0
+114,Perch,5,0,0,0,0,0,0,0,0,0,False,0
+115,Pike,5,0,0,0,0,0,0,0,0,0,False,0
+28,Pineapple,3,0,0,0,0,0,0,0,0,0,False,0
+166,Plaice,5,0,0,0,0,0,0,0,0,0,False,0
+192,Plain Flour,3,0,0,0,0,0,0,0,0,0,False,61.66
+29,Plum,3,0,0,0,0,0,0,0,0,0,False,0
+167,Pollack,5,0,0,0,0,0,0,0,0,0,False,0
+30,Pomegranate,3,0,0,0,0,0,0,0,0,0,False,0
+35,Pomelo,3,0,0,0,0,0,0,0,0,0,False,0
+4,Pork,7,0,0,0,0,0,0,0,0,0,False,0
+79,Potato,3,0,0,0,0,0,0,0,0,0,False,0
+183,Powdered Sugar,3,16,0,0,0,0,0,0,0,0,False,0
+168,Prawns,5,0,0,0,0,0,0,0,0,0,False,0
+48,Pulasan,3,0,0,0,0,0,0,0,0,0,False,0
+80,Pumpkin,3,0,0,0,0,0,0,0,0,0,False,0
+81,Radicchio,3,0,0,0,0,0,0,0,0,0,False,0
+82,Radish,3,0,0,0,0,0,0,0,0,0,False,0
+116,Rainbow Trout,5,0,0,0,0,0,0,0,0,0,False,0
+38,Rambutan,3,0,0,0,0,0,0,0,0,0,False,0
+31,Raspberry,3,0,0,0,0,0,0,0,0,0,False,0
+97,Red Cabbage,3,0,0,0,0,0,0,0,0,0,False,0
+98,Red Chili Pepper,3,0,0,0,0,0,0,0,0,0,False,0
+58,Red Onion,3,0,0,0,0,0,0,0,0,0,False,0
+118,Roach,5,0,0,0,0,0,0,0,0,0,False,0
+119,Rudd,5,0,0,0,0,0,0,0,0,0,False,0
+120,Ruffe,5,0,0,0,0,0,0,0,0,0,False,0
+193,Rye Flour,3,0,0,0,0,0,0,0,0,0,False,0
+121,Salmon,5,0,0,0,0,0,0,0,0,0,False,0
+196,Salt,1,0,0,0,0,0,0,0,0,0,False,0
+52,Santol,3,0,0,0,0,0,0,0,0,0,False,0
+197,Sea Salt,1,0,0,0,0,0,0,0,0,0,False,0
+194,Self-Raising Flour,3,0,0,0,0,0,0,0,0,0,False,61.66
+122,Silver Bream,5,0,0,0,0,0,0,0,0,0,False,0
+54,Snake Fruit,3,0,0,0,0,0,0,0,0,0,False,0
+59,Spinach,3,0,0,0,0,0,0,0,0,0,False,0
+47,Starfruit,3,0,0,0,0,0,0,0,0,0,False,0
+123,Stone Loach,5,0,0,0,0,0,0,0,0,0,False,0
+32,Strawberry,3,0,0,0,0,0,0,0,0,0,False,0
+45,Sugar Apple,3,0,0,0,0,0,0,0,0,0,False,0
+184,Superfine Sugar,3,16,0,0,0,0,0,0,0,0,False,0
+60,Sweet Potato,3,0,0,0,0,0,0,0,0,0,False,0
+124,Tench,5,0,0,0,0,0,0,0,0,0,False,0
+125,Thick-Lipped Mullet,5,0,0,0,0,0,0,0,0,0,False,0
+126,Three-Spined Stickleback,5,0,0,0,0,0,0,0,0,0,False,0
+61,Tomato,3,0,0,0,0,0,0,0,0,0,False,0
+187,Turbinado Sugar,3,18,0,0,0,0,0,0,0,0,False,0
+176,Vegetable Stock,3,0,0,0,0,0,0,0,0,0,True,0
+170,Water (Carbonated),1,0,0,0,0,0,0,0,0,0,True,0
+169,Water (Still),1,0,0,0,0,0,0,0,0,0,True,0
+33,Watermelon,3,0,0,0,0,0,0,0,0,0,False,0
+37,Wax Apples,3,0,0,0,0,0,0,0,0,0,False,0
+195,Wholemeal Flour,3,0,0,0,0,0,0,0,0,0,False,0
+62,Yam,3,0,0,0,0,0,0,0,0,0,False,0
+99,Yellow Squash,3,0,0,0,0,0,0,0,0,0,False,0
+100,Zucchini,3,0,0,0,0,0,0,0,0,0,False,0

@@ -1,0 +1,45 @@
+[RecipeBooks]
+FullTitle=The Cook Book Ware College 1990/91 Basic Cooking Course
+IngList=6
+Directions=5
+Note1s=0
+Note2s=0
+[IngList1]
+Ingredient=Potato
+Quantity=2
+MType=1
+[IngList2]
+Ingredient=Onion
+Quantity=2
+MType=1
+[IngList3]
+Ingredient=Celery
+Quantity=2
+MType=1
+[IngList4]
+Ingredient=Parsnip
+Quantity=1
+MType=1
+[IngList5]
+Ingredient=Water (Still)
+Quantity=2
+MType=18
+[IngList6]
+Ingredient=Bouquet Garni
+Quantity=1
+MType=1
+[Directions1]
+Position=1
+Direction=Chop the Onions, Dice the Potatoes, Slice the Parsnips
+[Directions2]
+Position=2
+Direction=Fry the onions, Potatoes, Celery and Parsnip.
+[Directions3]
+Position=3
+Direction=Add the Water and the Bouquet Garni then bring to the boil.
+[Directions4]
+Position=4
+Direction=Lower the heat bto a simmer for 1 hour.
+[Directions5]
+Position=5
+Direction=Strain off the liquid.

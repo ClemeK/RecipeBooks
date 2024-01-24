@@ -1,0 +1,663 @@
+﻿<Window x:Class="RecipeBooks.RecipeContents"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="RecipeContents" Height="620" Width="800"  WindowStartupLocation="CenterScreen"
+        Background="Gray">
+
+    <StackPanel>
+
+        <TabControl x:Name="tbMaster"  Margin="10,10,10,10">
+            <TabItem x:Name="tiRecipe" Header="Recipe Contents">
+
+                <StackPanel Background="LightSalmon">
+                    <!-- Title -->
+                    <Label x:Name="lblRecipeTitle" Content="Recipe Title" FontWeight="Bold" FontSize="24"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                    <!-- Sub-Title -->
+                    <Label x:Name="lblRecipeType" Content="Recipe Type" FontWeight="Bold" FontSize="16"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                    <!--Recipe Tabs-->
+                    <TabControl x:Name="tbSub"  Margin="10,10,10,10">
+                        <TabItem x:Name="tiBasics" Header="Basics">
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="150" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Left Side -->
+
+                                <Label Content="Recipe Id:" Grid.Row="1" Grid.Column="0" FontWeight="SemiBold"
+                                    VerticalAlignment="Center" />
+                                <Label x:Name="lblRecipeIdValue" Grid.Row="1" Grid.Column="1" Height="25" Width="50"
+                                    HorizontalAlignment="Left"  VerticalAlignment="Center" />
+
+                                <Label Content="Chapter:" Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" VerticalAlignment="Center" />
+                                <ComboBox x:Name="cbChapter2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                                          HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="150"
+                                          Foreground="#FF080808" Background="#FFF7F5F5" />
+
+                                <Label Content="Ref / Page:" Grid.Row="3" Grid.Column="0" FontWeight="SemiBold"
+                                        VerticalAlignment="Center" />
+                                <TextBox x:Name="tbReferance" Text="0" Grid.Row="3" Grid.Column="1" Height="25" Width="150"
+                                        VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                                <Label Content="Cuisine:" Grid.Row="4" Grid.Column="0" FontWeight="SemiBold" VerticalAlignment="Center" />
+                                <ComboBox x:Name="cbCuisine3" Grid.Row="4" Grid.Column="1"   Grid.ColumnSpan="2"
+                                          HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="150"
+                                        Foreground="#FF080808" Background="#FFF7F5F5" />
+
+                                <Label Content="Favourite:"  Grid.Row="5" Grid.Column="0" FontWeight="SemiBold" />
+                                <CheckBox x:Name="ckbFavourite" Grid.Row="5" Grid.Column="1"
+                                    Height="35" Width="35" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                                <Label Content="Quantity:"  Grid.Row="6" Grid.Column="0" FontWeight="SemiBold" />
+                                <TextBox x:Name="tbQuantity" Grid.Row="6" Grid.Column="1"
+                                    Height="25" Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                <ComboBox x:Name="cbQtyType" Grid.Row="6" Grid.Column="2" />
+
+                                <Label Content="Image:"  Grid.Row="7" Grid.Column="0" FontWeight="SemiBold" />
+                                <TextBox x:Name="tbImage" Text="File Name" Grid.Row="7" Grid.Column="1" Height="25" Width="500"
+                                    VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="4" />
+                                <Button x:Name="btnImage" Content="Browse" Grid.Row="7" Grid.Column="5" Click="AddImage_Click" />
+                                <Image x:Name="RecipeImage" Height="150" Width="150" Grid.Row="8" Grid.Column="1"
+                                   Grid.ColumnSpan="4" />
+
+                                <!--Right Side -->
+                                <Label Content="Makes:" Grid.Row="2" Grid.Column="4" FontWeight="SemiBold"
+                                VerticalAlignment="Center" />
+                                <TextBox x:Name="tbMakes" Text="0" Grid.Row="2" Grid.Column="5" Height="25" Width="150"
+                                VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                                <Label Content="Serving:" Grid.Row="3" Grid.Column="4" FontWeight="SemiBold"
+                                VerticalAlignment="Center" />
+                                <TextBox x:Name="tbServing" Text="0" Grid.Row="3" Grid.Column="5" Height="25" Width="150"
+                                VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                                <Label Content="Preparation Time:" Grid.Row="5" Grid.Column="4" FontWeight="SemiBold"
+                                VerticalAlignment="Center" />
+                                <TextBox x:Name="tbPreparation" Text="0" Grid.Row="5" Grid.Column="5" Height="25" Width="150"
+                                VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                                <Label Content="Cooking Time:" Grid.Row="6" Grid.Column="4" FontWeight="SemiBold"
+                                VerticalAlignment="Center" />
+                                <TextBox x:Name="tbCooking" Text="0" Grid.Row="6" Grid.Column="5" Height="25" Width="150"
+                                VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tLinks" Header="Links" Height="20" VerticalAlignment="Bottom">
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="350" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="200" />
+                                </Grid.RowDefinitions>
+
+                                <Label Content="Link" FontWeight="DemiBold" Grid.Row="0" Grid.Column="0" />
+                                <ComboBox x:Name="cbLink" Text="Link" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+
+                                <Button Content="+" FontWeight="Bold" Grid.Row="1" Grid.Column="2" Click="AddLink_Click" />
+
+                                <DataGrid Name="dgLinkSearch" ItemsSource="{Binding Path=query}"
+                                            AutoGenerateColumns="False"
+                                            Height="180" Width="Auto" MaxHeight="220"
+                                            VerticalAlignment="Top"
+                                            VerticalScrollBarVisibility="Visible"
+                                            CanUserAddRows="False"
+                                            Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                            Background="Transparent"
+                                            AlternatingRowBackground="LightBlue">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="DLink" Header="Link"   Width="475"
+                                            Binding="{Binding Path=DLink}"  IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style>
+                                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="-" FontWeight="DemiBold" Click="DeleteLink_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiIngredients" Header="Ingredients" Height="20" VerticalAlignment="Bottom">
+
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="350" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="295" />
+                                </Grid.RowDefinitions>
+
+                                <Label Content="Quantity" FontWeight="DemiBold" Grid.Row="0" Grid.Column="0" />
+                                <TextBox x:Name="tbQyt" Text="Quantity" Grid.Row="1" Grid.Column="0" />
+
+                                <Label Content="Measure" FontWeight="DemiBold" Grid.Row="0" Grid.Column="1" />
+                                <ComboBox x:Name="cbMType"  Text="M Type" Grid.Row="1" Grid.Column="1" />
+
+                                <Label Content="Ingredient" FontWeight="DemiBold" Grid.Row="0" Grid.Column="2" />
+                                <ComboBox  x:Name="cbIng" Text="Ingredient" Grid.Row="1" Grid.Column="2" />
+
+                                <Button Content="+" FontWeight="Bold" Grid.Row="1" Grid.Column="3" Click="AddIngredient_Click" />
+
+                                <DataGrid Name="dgIngredientSearch" ItemsSource="{Binding Path=query}"
+                                      AutoGenerateColumns="False"
+                                      Height="280" Width="Auto" MaxHeight="200"
+                                      VerticalScrollBarVisibility="Visible"
+                                      VerticalAlignment="Top"
+                                      CanUserAddRows="False"
+                                      Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"
+                                      Background="Transparent"
+                                      AlternatingRowBackground="LightBlue">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="IQty" Header="Qty"   Width="100"
+                                         Binding="{Binding Path=IQty}"  IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="IMType" Header="Measure"   Width="125"
+                                            Binding="{Binding Path=IMType}"  IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="IIngredient" Header="Ingredient"   Width="350"
+                                            Binding="{Binding Path=IIngredient}"  IsReadOnly="True" />
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="-" FontWeight="DemiBold" Click="DeleteIngredient_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiConvert" Header="Converter" Height="20" VerticalAlignment="Top">
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="350" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="295" />
+                                </Grid.RowDefinitions>
+
+                                <DataGrid Name="dgConvertSearch" ItemsSource="{Binding Path=query}"
+                                          AutoGenerateColumns="False"
+                                          Height="280" Width="Auto" MaxHeight="220"
+                                          VerticalScrollBarVisibility="Visible"
+                                          VerticalAlignment="Top"
+                                          CanUserAddRows="False"
+                                          Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"
+                                          Background="Transparent"
+                                          AlternatingRowBackground="LightBlue">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="CQty" Header="Qty"   Width="100"
+                                            Binding="{Binding Path=CQty}"  IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTextColumn x:Name="CMType" Header="Measure"   Width="125"
+                                            Binding="{Binding Path=CMType}"  IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="CIngredient" Header="Ingredient"   Width="350"
+                                            Binding="{Binding Path=CIngredient}"  IsReadOnly="True" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiDirections" Header="Directions" Height="20" VerticalAlignment="Top">
+
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="350" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="75" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="200" />
+                                </Grid.RowDefinitions>
+
+                                <Label Content="Position" FontWeight="DemiBold" Grid.Row="0" Grid.Column="0" />
+                                <TextBox x:Name="tbPosition" Text="Position" Grid.Row="1" Grid.Column="0" />
+
+                                <Label Content="Direction" FontWeight="DemiBold" Grid.Row="0" Grid.Column="1" />
+                                <TextBox x:Name="tbDirection" Text="Direction" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="NoWrap" />
+
+                                <Button Content="+" FontWeight="Bold" Grid.Row="1" Grid.Column="3" Click="AddDirection_Click" />
+
+                                <DataGrid Name="dgDirectionSearch" ItemsSource="{Binding Path=query}"
+                                      AutoGenerateColumns="False"
+                                      Height="180" Width="Auto" MaxHeight="220"
+                                      VerticalAlignment="Top"
+                                      VerticalScrollBarVisibility="Visible"
+                                      CanUserAddRows="False"
+                                      Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6"
+                                      Background="Transparent"
+                                      AlternatingRowBackground="LightBlue">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="DPos" Header="Position"   Width="75"
+                                        Binding="{Binding Path=DPos}"  IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="DDirection" Header="Direction"   Width="475"
+                                        Binding="{Binding Path=DDirection}"  IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style>
+                                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="-" FontWeight="DemiBold" Click="DeleteDirection_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="^" FontWeight="DemiBold" Click="UpDirection_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="v" FontWeight="DemiBold" Click="DownDirection_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiNotes1" Header="Chefs Notes">
+
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="24" />
+                                    <ColumnDefinition Width="130" />
+                                    <ColumnDefinition Width="196" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="75" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="200" />
+                                </Grid.RowDefinitions>
+
+                                <Label Content="Note Nbr" FontWeight="DemiBold" Grid.Row="0" Grid.Column="0" />
+                                <TextBox x:Name="tbNote1Nbr" Text="Note Nbr" Grid.Row="1" Grid.Column="0" />
+
+                                <Label Content="Note" FontWeight="DemiBold" Grid.Row="0" Grid.Column="1" />
+                                <TextBox x:Name="tbNote1" Text="Note" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4"  TextWrapping="Wrap" />
+
+                                <Button Content="+" FontWeight="Bold" Grid.Row="1" Grid.Column="5"  Click="AddNote1_Click" />
+
+                                <DataGrid Name="dgNote1Search" ItemsSource="{Binding Path=query}"
+                                        AutoGenerateColumns="False"
+                                        Height="180" Width="Auto" MaxHeight="220"
+                                        VerticalScrollBarVisibility="Visible"
+                                        VerticalAlignment="Top"
+                                        CanUserAddRows="False"
+                                        Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="8"
+                                        Background="Transparent"
+                                        AlternatingRowBackground="LightBlue">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="N1Nbr" Header="Note Nbr"   Width="75"
+                                        Binding="{Binding Path=NNbr}"  IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="N1Note" Header="Note"   Width="475"
+                                        Binding="{Binding Path=NNote}"  IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style>
+                                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="-" FontWeight="DemiBold" Click="DeleteNote1_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="^" FontWeight="DemiBold" Click="UpNote1_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="v" FontWeight="DemiBold" Click="DownNote1_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiNotes2" Header="My Notes">
+
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="24" />
+                                    <ColumnDefinition Width="326" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="75" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="200" />
+                                </Grid.RowDefinitions>
+
+                                <Label Content="Note Nbr" FontWeight="DemiBold" Grid.Row="0" Grid.Column="0" />
+                                <TextBox x:Name="tbNote2Nbr" Text="Note Nbr" Grid.Row="1" Grid.Column="0" />
+
+                                <Label Content="Note" FontWeight="DemiBold" Grid.Row="0" Grid.Column="1" />
+                                <TextBox x:Name="tbNote2" Text="Note" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  TextWrapping="Wrap" />
+
+                                <Button Content="+" FontWeight="Bold" Grid.Row="1" Grid.Column="4"  Click="AddNote2_Click" />
+
+                                <DataGrid Name="dgNote2Search" ItemsSource="{Binding Path=query}"
+                                      AutoGenerateColumns="False"
+                                      Height="180" Width="Auto" MaxHeight="220"
+                                      VerticalScrollBarVisibility="Visible"
+                                      VerticalAlignment="Top"
+                                      CanUserAddRows="False"
+                                      Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7"
+                                      Background="Transparent"
+                                      AlternatingRowBackground="LightBlue">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="N2Nbr" Header="Note Nbr"   Width="75"
+                                      Binding="{Binding Path=NNbr}"  IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="N2Note" Header="Note"   Width="475"
+                                      Binding="{Binding Path=NNote}"  IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style>
+                                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="-" FontWeight="DemiBold" Click="DeleteNote2_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="^" FontWeight="DemiBold" Click="UpNote2_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="v" FontWeight="DemiBold" Click="DownNote2_Click" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiNutrition" Header="Nutrition">
+                            <Grid Background="LightPink">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Frist Column -->
+                                <Label Content="In Total" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalContentAlignment="Center" FontWeight="SemiBold" />
+                                <Label Content="Per portion" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontWeight="SemiBold" />
+
+                                <Label Content="Calories:" Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" />
+                                <Label x:Name="lbTCalories" Content="TCalories"  Grid.Row="1" Grid.Column="1" Height="25" Width="75"
+                                        HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label x:Name="lbPCalories" Content="PCalories"  Grid.Row="1" Grid.Column="4" Height="25" Width="75"
+                                        HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+
+                                <Label Content="Energy:" Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" Grid.RowSpan="2" />
+                                <Label x:Name="lbTEnergy" Content="TEnergy"  Grid.Row="2" Grid.Column="1" Height="25" Width="75"
+                                        HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="Kj" Grid.Row="2" Grid.Column="2" />
+                                <Label x:Name="lbPEnergy" Content="PEnergy"  Grid.Row="2" Grid.Column="4" Height="25" Width="75"
+                                        HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="Kj" Grid.Row="2" Grid.Column="5" />
+
+                                <Label Content="Fat:"  Grid.Row="3" Grid.Column="0" FontWeight="SemiBold"  Grid.RowSpan="2" />
+                                <Label x:Name="lbTFat" Content="TFat"  Grid.Row="3" Grid.Column="1" Height="25" Width="75"
+                                        HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="3" Grid.Column="2" />
+                                <Label x:Name="lbPFat" Content="PFat"  Grid.Row="3" Grid.Column="4" Height="25" Width="75"
+                                        HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="3" Grid.Column="5" />
+
+                                <Label Content="SaturatedFat:" Grid.Row="4" Grid.Column="0" FontWeight="SemiBold"  Grid.RowSpan="2" />
+                                <Label x:Name="lbTSaturatedFat" Content="TSaturatedFat"  Grid.Row="4" Grid.Column="1" Height="25"
+                                        Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="4" Grid.Column="2" />
+                                <Label x:Name="lbPSaturatedFat" Content="PSaturatedFat"  Grid.Row="4" Grid.Column="4" Height="25"
+                                        Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="4" Grid.Column="5" />
+
+                                <Label Content="Carbohydrate:" Grid.Row="5" Grid.Column="0" FontWeight="SemiBold"  Grid.RowSpan="2" />
+                                <Label x:Name="lbTCarbohydrate" Content="TCarbohydrate"  Grid.Row="5" Grid.Column="1"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="5" Grid.Column="2" />
+                                <Label x:Name="lbPCarbohydrate" Content="PCarbohydrate"  Grid.Row="5" Grid.Column="4"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="5" Grid.Column="5" />
+
+                                <Label Content="Sugars:" Grid.Row="6" Grid.Column="0" FontWeight="SemiBold"  Grid.RowSpan="2" />
+                                <Label x:Name="lbTSugars" Content="TSugars"  Grid.Row="6" Grid.Column="1"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="6" Grid.Column="2" />
+                                <Label x:Name="lbPSugars" Content="PSugars"  Grid.Row="6" Grid.Column="4"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="6" Grid.Column="5" />
+
+                                <Label Content="Fibre:" Grid.Row="7" Grid.Column="0" FontWeight="SemiBold" Grid.RowSpan="2" />
+                                <Label x:Name="lbTFibre" Content="TFibre"  Grid.Row="7" Grid.Column="1"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="7" Grid.Column="2" />
+                                <Label x:Name="lbPFibre" Content="PFibre"  Grid.Row="7" Grid.Column="4"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="7" Grid.Column="5" />
+
+                                <Label Content="Protein:"  Grid.Row="8" Grid.Column="0" FontWeight="SemiBold"  Grid.RowSpan="2" />
+                                <Label x:Name="lbTProtein" Content="TProtein"  Grid.Row="8" Grid.Column="1"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="8" Grid.Column="2" />
+                                <Label x:Name="lbPProtein" Content="PProtein"  Grid.Row="8" Grid.Column="4"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="g" Grid.Row="8" Grid.Column="5" />
+
+                                <Label Content="Salt:"  Grid.Row="9" Grid.Column="0" FontWeight="SemiBold" Grid.RowSpan="2" />
+                                <Label x:Name="lbTSalt" Content="TSalt"  Grid.Row="9" Grid.Column="1"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="mg" Grid.Row="9" Grid.Column="2" />
+                                <Label x:Name="lbPSalt" Content="PSalt"  Grid.Row="9" Grid.Column="4"
+                                        Height="25" Width="75" HorizontalContentAlignment="Right"  VerticalAlignment="Center" />
+                                <Label Content="mg" Grid.Row="9" Grid.Column="5" />
+
+                                <Label x:Name="lbError" Content="** Error **"  Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8"
+                                       FontWeight="SemiBold" Foreground="Red" HorizontalContentAlignment="Center" />
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="tiDisplay" Header="Display" Height="20" VerticalAlignment="Bottom">
+                            <StackPanel Background="LightPink">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                        <Label Content="Ingredient Quantities:"  FontWeight="Bold" />
+                                        <RadioButton Name="Btn_Default"   GroupName="Conv" Content="Default  " VerticalContentAlignment="Center" IsChecked="True" Checked="Display_Checked" />
+                                        <RadioButton Name="Btn_Metric"  GroupName="Conv" Content="Metric  "  VerticalContentAlignment="Center" Checked="Display_Checked" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                        <Label Content="Include:" FontWeight="Bold" />
+                                        <CheckBox Name="Btn_Note1s"  Content="Chef's Notes  " VerticalContentAlignment="Center" IsChecked="True"  Checked="Display_Checked" Unchecked="Display_Checked" />
+                                        <CheckBox Name="Btn_Note2s"  Content="Personal Notes  " VerticalContentAlignment="Center" IsChecked="True" Checked="Display_Checked" Unchecked="Display_Checked" />
+                                    </StackPanel>
+                                </Grid>
+                                <RichTextBox x:Name="rtfDetail" VerticalScrollBarVisibility="Visible" Height="325" MaxHeight="325" />
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+
+                    <!-- Buttons -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="0" x:Name="btnClearRecipe" Content="Clear Recipe"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="ClearRecipeButton" />
+
+                        <Button Grid.Row="0" Grid.Column="2" x:Name="btnUpdateRecipe" Content="Update Recipe"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="UpdateRecipeButton" />
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>

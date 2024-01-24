@@ -1,0 +1,47 @@
+[RecipeBooks]
+FullTitle=The Cook Book Ware College 1990/91 Basic Cooking Course
+IngList=8
+Directions=3
+Note1s=0
+Note2s=0
+[IngList1]
+Ingredient=Potato
+Quantity=12
+MType=9
+[IngList2]
+Ingredient=Leek
+Quantity=2
+MType=5
+[IngList3]
+Ingredient=Butter
+Quantity=1
+MType=9
+[IngList4]
+Ingredient=Vegetable Stock
+Quantity=0.25
+MType=18
+[IngList5]
+Ingredient=Milk (Cows)
+Quantity=4
+MType=14
+[IngList6]
+Ingredient=Nutmeg
+Quantity=0.25
+MType=13
+[IngList7]
+Ingredient=Salt
+Quantity=1
+MType=8
+[IngList8]
+Ingredient=Pepper
+Quantity=1
+MType=8
+[Directions1]
+Position=1
+Direction=Melt Butter in a large saucepan.
+[Directions2]
+Position=2
+Direction=Add Leeks, cover and gently, stirring ocasionally for 10 minutes, (Reserve a few rings of uncooked leeks for garnish).
+[Directions3]
+Position=3
+Direction=Add the Potatoes to the pan with the Stock, seasoning and adding the nutmeg.

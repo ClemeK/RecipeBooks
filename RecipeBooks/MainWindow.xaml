@@ -1,0 +1,283 @@
+﻿<Window x:Class="RecipeBooks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Recipe Books" Height="630" Width="800" WindowStartupLocation="CenterScreen"
+        Background="Gray">
+
+    <StackPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="MSetting" Header="Setting">
+                <MenuItem x:Name="MSLocations" Header="Locations" Click="LocationsButton" />
+                <MenuItem x:Name="MSChapters" Header="Chapters" Click="ChaptersButton" />
+                <MenuItem x:Name="MSIngredients" Header="Ingredients" Click="IngredientsButton" />
+                <MenuItem x:Name="MSPurge" Header="Purge Database" Click="PurgeButton" />
+                <MenuItem x:Name="MSExit" Header="Exit" Click="ExitButton" />
+            </MenuItem>
+
+            <MenuItem x:Name="MHelp" Header="Help">
+                <MenuItem x:Name="MHView" Header="View Help" Click="HelpButton" />
+            </MenuItem>
+        </Menu>
+
+        <TabControl x:Name="tbMaster"  Margin="10,10,10,10">
+            <TabItem x:Name="tiBooks" Header="Recipe Books">
+
+                <StackPanel Background="LightSkyBlue">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="17" />
+                            <ColumnDefinition Width="190" />
+                            <ColumnDefinition Width="43" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Left Side -->
+
+                        <Label Content="Book Id:" Grid.Row="0" Grid.Column="0" FontWeight="SemiBold" />
+                        <Label x:Name="lblBookIdValue" Grid.Row="0" Grid.Column="1" Height="25"
+                            HorizontalAlignment="Left"  VerticalAlignment="Center" Grid.ColumnSpan="2" />
+
+                        <Label Content="Title:" Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" />
+                        <TextBox x:Name="tbTitle"  Text="Book Title" Grid.Row="1" Grid.Column="1" Height="25" Width="230"
+                            HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.ColumnSpan="3" TextChanged="BookTextChanged" />
+
+                        <Label Content="Sub-Title:" Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" />
+                        <TextBox x:Name="tbSubTitle" Text="Book Sub-Title"  Grid.Row="2" Grid.Column="1"
+                            Grid.ColumnSpan="3" Height="25" Width="230"
+                            HorizontalAlignment="Left"  VerticalAlignment="Top" />
+
+                        <Label Content="Publisher:" Grid.Row="3" Grid.Column="0" FontWeight="SemiBold" />
+                        <TextBox x:Name="tbPublisher" Text="Publisher"  Grid.Row="3" Grid.Column="1"
+                            Grid.ColumnSpan="3" Height="25" Width="230"
+                            HorizontalAlignment="Left"  VerticalAlignment="Top" />
+
+                        <Label Content="Author:" Grid.Row="4" Grid.Column="0" FontWeight="SemiBold" />
+                        <TextBox x:Name="tbAuthor" Text="Author"  Grid.Row="4" Grid.Column="1"
+                            Grid.ColumnSpan="3"   Height="25" Width="230"
+                            HorizontalAlignment="Left"  VerticalAlignment="Top" />
+
+                        <Label Content="Year:"  Grid.Row="5" Grid.Column="0" FontWeight="SemiBold" />
+                        <TextBox x:Name="tbYear" Text="2023"  Grid.Row="5" Grid.Column="1"
+                           Grid.ColumnSpan="3"  Height="25" Width="230"
+                           HorizontalAlignment="Left"  VerticalAlignment="Top" PreviewTextInput="IntValidation" />
+
+                        <Label Content="Location:" Grid.Row="6" Grid.Column="0" FontWeight="SemiBold" />
+                        <ComboBox x:Name="cbLocation"  Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left"
+                             Height="25" Width="230"
+                             Foreground="#FF080808" Background="#FFF7F5F5" Grid.ColumnSpan="3" />
+
+                        <Label Content="Copies:" Grid.Row="7" Grid.Column="0" FontWeight="SemiBold" />
+                        <TextBox x:Name="tbCopies" Text="1"  Grid.Row="7" Grid.Column="1"
+                            Grid.ColumnSpan="3" Height="25" Width="230"
+                            HorizontalAlignment="Left"  VerticalAlignment="Top"
+                            PreviewTextInput="IntValidation" />
+
+                        <Label Content="Cuisine:" Grid.Row="8" Grid.Column="0" FontWeight="SemiBold" />
+                        <ComboBox x:Name="cbCuisine"  Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left"
+                            Grid.ColumnSpan="3"  Height="25" Width="230"
+                            Foreground="#FF080808" Background="#FFF7F5F5" />
+
+                        <Label Content="Media Type:" Grid.Row="9" Grid.Column="0" FontWeight="SemiBold" />
+                        <ComboBox x:Name="cbMediaType"  Grid.Row="9" Grid.Column="1" HorizontalAlignment="Left"
+                            Grid.ColumnSpan="3" Height="25" Width="230"
+                            Foreground="#FF080808" Background="#FFF7F5F5" />
+
+                        <Label Content="Recipe Count:"  Grid.Row="10" Grid.Column="0" FontWeight="SemiBold" />
+                        <Label x:Name="lblRCount" Content="RCount"  Grid.Row="10" Grid.Column="1"
+                             Height="25" Width="230" Grid.ColumnSpan="2"
+                             HorizontalAlignment="Left"  VerticalAlignment="Top" />
+
+                        <Label Content="Recipe Ref:"  Grid.Row="11" Grid.Column="0" FontWeight="SemiBold" />
+                        <Label x:Name="lblRRef" Content="RRef"  Grid.Row="11" Grid.Column="1"
+                             Height="25" Width="230" Grid.ColumnSpan="2"
+                             HorizontalAlignment="Left"  VerticalAlignment="Top" />  
+
+                        <!-- Right Side -->
+
+                        <Label x:Name="lblBookLabel" Content="Books"  Grid.Row="0" Grid.Column="4" FontWeight="Bold" />
+                        <ListBox x:Name="lbBooksList" Grid.Row="1" Grid.Column="4"
+                             Grid.RowSpan="11" Grid.ColumnSpan="2"
+                            HorizontalAlignment="Left" Height="380" Width="390"
+                             d:ItemsSource="{d:SampleData ItemCount=18}"
+                            SelectionChanged="BookSelectedListBox" />
+                    </Grid>
+
+                    <!-- Buttons -->
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="1" Grid.Column="1" x:Name="btnImportBooks" Content="Import Books"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="ImportBooksButton" />
+                        <Button Grid.Row="1" Grid.Column="2" x:Name="btnExportBooks" Content="Export Books"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="ExportBooksButton" />
+                        <Button Grid.Row="1" Grid.Column="0" x:Name="btnEditBook" Content="Edit Book"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="EditBookButton" />
+                        <Button Grid.Row="0" Grid.Column="0" x:Name="btnClearBook" Content="Clear Book"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="ClearBookButton" />
+                        <Button Grid.Row="0" Grid.Column="1" x:Name="btnAddBook" Content="Add Book"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="AddBookButton" />
+                        <Button Grid.Row="0" Grid.Column="2" x:Name="btnUpdateBook" Content="Update Book"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="UpdateBookButton" />
+                        <Button Grid.Row="0" Grid.Column="3" x:Name="btnDeleteBook" Content="Delete Book"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5"  Click="DeleteBookButton" />
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem x:Name="tiBookSearch" Header="Books Search">
+
+                <Grid Background="LightSkyBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="57" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="25" />
+                        <!-- Header Row -->
+                        <RowDefinition Height ="25" />
+                        <!-- Search Details -->
+                        <RowDefinition Height ="25" />
+                        <!-- Query -->
+                        <RowDefinition Height ="*" />
+                        <!-- DataGrid -->
+                        <RowDefinition Height ="25" />
+                        <!-- Space -->
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="lblSTitle" Grid.Column="0" Grid.Row="0" Content="Book Search:"
+                       Grid.ColumnSpan="2" FontWeight="SemiBold" />
+
+                    <TextBox x:Name="tbBookSearch" Grid.Column="0" Grid.Row="1"
+                         TextChanged="tbSearchBook_Changed" Grid.ColumnSpan="2" />
+
+                    <Label x:Name="lblBookSearchText" Grid.Column="0" Grid.Row="2" Width="760"
+                           Foreground="Blue" HorizontalContentAlignment="Center" />
+
+                    <DataGrid Name="dgBookSearch" ItemsSource="{Binding Path=query}"
+                              AutoGenerateColumns="False"
+                              Height="400" Width="Auto"
+                              VerticalScrollBarVisibility="Visible"
+                              CanUserAddRows="False"
+                              Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                              Background="Transparent"
+                              AlternatingRowBackground="LightBlue"
+                              SelectedCellsChanged="DateGrid_BookSelected">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="BId" Header="Id"   Width="10"
+                                        Binding="{Binding Path=BId}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="BTitle" Header="Full Title"   Width="400"
+                                        Binding="{Binding Path=BTitle}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="BPublisher" Header="Publisher"   Width="95"
+                                        Binding="{Binding Path=BPublisher}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="BAuthor" Header="Author"   Width="95"
+                                        Binding="{Binding Path=BAuthor}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="BYear" Header="Year"   Width="35"
+                                        Binding="{Binding Path=BYear}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="BLocation" Header="Location"   Width="100"
+                                        Binding="{Binding Path=BLocation}"  IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="tiRecipeSearch" Header="Recipes Search">
+
+                <Grid Background="LightSeaGreen">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="57" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="25" />
+                        <!-- Header Row -->
+                        <RowDefinition Height ="25" />
+                        <!-- Search Details -->
+                        <RowDefinition Height ="25" />
+                        <!-- Query -->
+                        <RowDefinition Height ="*" />
+                        <!-- DataGrid -->
+                        <RowDefinition Height ="45" />
+                        <!-- Buttons -->
+                        <RowDefinition Height ="25" />
+                        <!-- Space -->
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="lblSRecipe" Grid.Column="0" Grid.Row="0" Content="Recipe Search:"
+                       Grid.ColumnSpan="2" FontWeight="SemiBold" />
+
+                    <TextBox x:Name="tbRecipeSearch" Grid.Column="0" Grid.Row="1"
+                         TextChanged="tbSearchRecipe_Changed" Grid.ColumnSpan="2" />
+
+                    <Label x:Name="lblRSearchText" Grid.Column="0" Grid.Row="2" Width="760"
+                           Foreground="Blue" HorizontalContentAlignment="Center" />
+
+                    <DataGrid Name="dgRecipeSearch" ItemsSource="{Binding Path=query}"
+                              AutoGenerateColumns="False"
+                              Height="350" Width="Auto"
+                              VerticalScrollBarVisibility="Visible"
+                              CanUserAddRows="False"
+                              Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                              Background="Transparent"
+                              AlternatingRowBackground="LightBlue"
+                              SelectedCellsChanged="DateGrid_RecipeSelected">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="RId" Header="Id"   Width="10"
+                                        Binding="{Binding Path=RId}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="RBookTitle" Header="Book Title"   Width="360"
+                                        Binding="{Binding Path=RBookTitle}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="RYear" Header="Year"   Width="35"
+                                        Binding="{Binding Path=RYear}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="RTitle" Header="Recipe Title"   Width="*"
+                                        Binding="{Binding Path=RTitle}"  IsReadOnly="True" />
+                            <DataGridTextColumn x:Name="RChapter" Header="Chapter"   Width="200"
+                                        Binding="{Binding Path=RChapter}"  IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="4"  Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                        <Button   x:Name="btnImportRecipes" Content="Import Recipes"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="ImportRecipesButton" />
+                        <Button  x:Name="btnExportRecipes" Content="Export Recipes"
+                    HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5" Click="ExportRecipesButton" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>
