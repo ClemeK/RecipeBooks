@@ -282,7 +282,7 @@ namespace RecipeBooks
                 records = csv.GetRecords<IngredientsModel>().ToList();
 
                 string mesBoxTitle = "Ingredients";
-                string msgText = $"All Ingredients Imported ({records.Count()})";
+                string msgText = $"Importing ({records.Count()}) Ingredients, this may take a while...";
 
                 MessageBox.Show(msgText, mesBoxTitle, MessageBoxButton.OK, MessageBoxImage.Information);
                 errorlog.InformationMessage(mesBoxTitle, msgText);

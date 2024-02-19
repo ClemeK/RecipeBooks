@@ -90,6 +90,21 @@ namespace RecipeBooks
         }
 
         // ************************************************
+        private void CheckBoxChangeState(object sender, RoutedEventArgs e)
+        {
+            if (ckbLiquid.IsChecked == true)
+            {
+                tbML.IsEnabled = false;
+                tbWeight.IsEnabled = false;
+            }
+            else
+            {
+                tbML.IsEnabled = true;
+                tbWeight.IsEnabled = true;
+            }
+        }
+
+        // ************************************************
         private void ClearIngredientBoxes()
         {
             lblIngredientLabel.Content = (Ingredients.Count != 0) ? $"Ingredients ({Ingredients.Count})" : "Ingredients";
@@ -125,6 +140,27 @@ namespace RecipeBooks
         }
 
         // ************************************************
+        private float ConvertLiters2Grams()
+        {
+            float weight = (tbWeight.Text != null) ? float.Parse(tbWeight.Text) : 0.0f;
+            float ml = (tbML.Text != null) ? float.Parse(tbML.Text) : 0.0f;
+
+            if (weight != 0.0f && ml != 0.0f)
+            {
+                if (ml != 100.0f)
+                {
+                    weight = (weight / ml) * 100.0f;
+                }
+            }
+            else
+            {
+                weight = 0.0f;
+            }
+
+            return weight;
+        }
+
+        // ************************************************
         private void DeleteIngredientButton(object sender, RoutedEventArgs e)
         {
             int index = lbIngredientsList.SelectedIndex;
@@ -153,21 +189,49 @@ namespace RecipeBooks
         {
             List<IngredientsModel> SearchResults = new List<IngredientsModel>();
 
+            int count = 0;
+
             Ingredients.Clear();
-            Ingredients = CSVFile.ReadIngredientsFile(errorlog);
 
-            foreach (var ing in Ingredients)
+            try
             {
-                string q = $"select * from Ingredients where IngredientName = \"{ing.IngredientName}\"";
-                SearchResults = SQLiteDataAccess.SearchIngredients(q);
+                Ingredients = CSVFile.ReadIngredientsFile(errorlog);
 
-                if (SearchResults.Count == 0 || SearchResults == null)
+                foreach (var ing in Ingredients)
                 {
-                    SQLiteDataAccess.AddIngredient(ing);
+                    string q = $"select * from Ingredients where IngredientName = \"{ing.IngredientName}\"";
+                    SearchResults = SQLiteDataAccess.SearchIngredients(q);
+
+                    count++;
+
+                    if (SearchResults.Count == 0 || SearchResults == null)
+                    {
+                        SQLiteDataAccess.AddIngredient(ing);
+
+                        // Find out the new Ingredient ID
+                        ing.IngredientId = General.LookupIngredientType(ing.IngredientName);
+
+                        errorlog.InformationMessage("Ingredient Added - ", ing.ToString());
+                    }
                 }
+            }
+            catch
+            {
+                string mesTitle = "Import Ingredients";
+                string message = $"Failed to Import file. An error occured at line {count} of the file. Please check you have the correct columns and the correct value types.";
+                
+                MessageBox.Show(message, mesTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                errorlog.InformationMessage(message, mesTitle);
+                return;
             }
 
             RefreshIngredients();
+
+            string mesBoxTitle = "Ingredients";
+            string msgText = $"Finished Importing Ingredients.";
+
+            MessageBox.Show(msgText, mesBoxTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+            errorlog.InformationMessage(mesBoxTitle, msgText);
         }
 
         // ************************************************
@@ -264,7 +328,7 @@ namespace RecipeBooks
             // Must be Refreshed after EVERYTHING else
             WireUpIngredientsLB();
 
-            lblIngredientIdValue.Content = "";
+            lblIngredientIdValue.Content = string.Empty;
         }
 
         // ************************************************
@@ -363,43 +427,6 @@ namespace RecipeBooks
                 cbIngredientType.Items.Add(c.IngType);
             }
         }
-
-        // ************************************************
-        private float ConvertLiters2Grams()
-        {
-            float weight = (tbWeight.Text != null) ? float.Parse(tbWeight.Text) : 0.0f;
-            float ml = (tbML.Text != null) ? float.Parse(tbML.Text) : 0.0f;
-
-            if (weight != 0.0f && ml != 0.0f)
-            {
-                if (ml != 100.0f)
-                {
-                    weight = (weight / ml) * 100.0f;
-                }
-            }
-            else
-            {
-                weight = 0.0f;
-            }
-
-            return weight;
-        }
-
-        // ************************************************
-        private void CheckBoxChangeState(object sender, RoutedEventArgs e)
-        {
-            if (ckbLiquid.IsChecked == true)
-            {
-                tbML.IsEnabled = false;
-                tbWeight.IsEnabled = false;
-            }
-            else
-            {
-                tbML.IsEnabled = true;
-                tbWeight.IsEnabled = true;
-            }
-        }
-
         // ************************************************
     }
 }

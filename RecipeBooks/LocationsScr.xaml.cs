@@ -104,20 +104,35 @@ namespace RecipeBooks
         {
             List<LocationsModel> SearchResults = new List<LocationsModel>();
 
+            int count = 0;
+
             Locations.Clear();
-            Locations = CSVFile.ReadLocationsFile(errorlog);
 
-            foreach (var loc in Locations)
+            try
             {
-                string q = $"select * from Locations where LocationTitle = \"{loc.LocationTitle}\"";
-                SearchResults = SQLiteDataAccess.SearchLocations(q);
+                Locations = CSVFile.ReadLocationsFile(errorlog);
 
-                if (SearchResults.Count == 0 || SearchResults == null)
+                foreach (var loc in Locations)
                 {
-                    SQLiteDataAccess.AddLocation(loc);
+                    string q = $"select * from Locations where LocationTitle = \"{loc.LocationTitle}\"";
+                    SearchResults = SQLiteDataAccess.SearchLocations(q);
+
+                    count++;
+
+                    if (SearchResults.Count == 0 || SearchResults == null)
+                    {
+                        SQLiteDataAccess.AddLocation(loc);
+                    }
                 }
             }
+            catch
+            {
+                string message = $"Failed to Import file. An error occured at line {count} of the file. Please check you have the correct columns and the correct value types.";
 
+                MessageBox.Show(message, "Import Locations", MessageBoxButton.OK, MessageBoxImage.Information);
+                errorlog.InformationMessage(message, "Import Locations");
+                return;
+            }
             RefreshLocationLB();
         }
 

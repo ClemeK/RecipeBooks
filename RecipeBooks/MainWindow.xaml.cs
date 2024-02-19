@@ -48,6 +48,7 @@ using System.Windows.Controls;
 * 12/Jan/2024 - Allowed for convertion to metric in the Display of the recipe Quantity.
 * 15/Jan/2024 - Added Links into the Recipe to point too connected recipes.
 * 23/Jan/2024 - Added Purge To the Setting menu.
+* 08/Feb/2024 - Added addition error handeling in the Import methods of Ingredient\Location\Chapter 
 */
 
 namespace RecipeBooks

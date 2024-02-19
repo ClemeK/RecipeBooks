@@ -7,7 +7,7 @@
         Title="Ingredients" Height="655" Width="800" WindowStartupLocation="CenterScreen">
 
     <StackPanel Background="LightYellow">
-
+       
         <Grid>
             <Grid.ColumnDefinitions>
                 <!-- 00 -->
@@ -160,6 +160,8 @@
             <TextBox x:Name="tbML" Text="ml" Height="25" Width="75" PreviewTextInput="FloatValidation"
                      HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
             <Label Content="ml" />
+
+            <Label x:Name="lbImport" Content="lbImport" HorizontalContentAlignment="Center" Width="130"/>
         </StackPanel>
 
         <!-- Buttons -->
@@ -189,5 +191,6 @@
             <Button Grid.Row="0" Grid.Column="3" x:Name="btnDeleteIngredient" Content="Delete Ingredient"
                     HorizontalAlignment="Center" Height="30"  Width="125" Margin="5 5"  Click="DeleteIngredientButton" />
         </Grid>
+
     </StackPanel>
 </Window>

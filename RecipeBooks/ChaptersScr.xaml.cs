@@ -111,18 +111,34 @@ namespace RecipeBooks
         {
             List<ChaptersModel> SearchResults = new List<ChaptersModel>();
 
+            int count = 0;
+
             Chapters.Clear();
-            Chapters = CSVFile.ReadChaptersFile(errorlog);
 
-            foreach (var c in Chapters)
+            try
             {
-                string q = $"select * from Chapters where ChapterTitle = \"{c.ChapterName}\"";
-                SearchResults = SQLiteDataAccess.SearchChapters(q);
+                Chapters = CSVFile.ReadChaptersFile(errorlog);
 
-                if (SearchResults.Count == 0 || SearchResults == null)
+                foreach (var c in Chapters)
                 {
-                    SQLiteDataAccess.AddChapter(c);
+                    string q = $"select * from Chapters where ChapterTitle = \"{c.ChapterName}\"";
+                    SearchResults = SQLiteDataAccess.SearchChapters(q);
+
+                    count++;
+
+                    if (SearchResults.Count == 0 || SearchResults == null)
+                    {
+                        SQLiteDataAccess.AddChapter(c);
+                    }
                 }
+            }
+            catch
+            {
+                string message = $"Failed to Import file. An error occured at line {count} of the file. Please check you have the correct columns and the correct value types.";
+
+                MessageBox.Show(message, "Import Chapters", MessageBoxButton.OK, MessageBoxImage.Information);
+                errorlog.InformationMessage(message, "Import Chapters");
+                return;
             }
 
             RefreshChapters();
